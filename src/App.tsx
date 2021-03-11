@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
+
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,10 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={() => {
+          const ipcRenderer = window.electron.ipcRenderer
+          ipcRenderer.send("synchronous-message")
+        }}>押せ</button>
       </header>
     </div>
   );

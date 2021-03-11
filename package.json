@@ -1,18 +1,23 @@
 {
   "name": "k42un0k0gitclient",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "./build/main.js",
+  "homepage": "./",
   "repository": "https://github.com/k42un0k0/k42un0k0gitclient.git",
   "author": "k42un0k0 <k42un0k0.put1put1@gmail.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
     "start": "run-p watch:electron start:*",
-    "start:web": "react-scripts start",
+    "start:web": "cross-env BROWSER=\"none\" react-scripts start",
     "start:electron": "cross-env ELECTRON_START_URL=\"http://localhost:3000\" electron .",
-    "test:web": "react-scripts test",
-    "build:electron": "tsc -p tsconfig.electron.json",
-    "watch:electron": "yarn build:electron --watch"
+    "build":"run-p build:*",
+    "build:web": "react-scripts build",
+    "build:electron": "tsc -p electron/tsconfig.json",
+    "package":"run-s build:* package:electron",
+    "package:electron":"electron-builder",
+    "watch:electron": "yarn build:electron --watch",
+    "test:web": "react-scripts test"
   },
   "devDependencies": {
     "@testing-library/react": "^11.2.5",
@@ -22,6 +27,7 @@
     "@types/react-dom": "^17.0.2",
     "cross-env": "^7.0.3",
     "electron": "^12.0.1",
+    "electron-builder": "^22.10.5",
     "electron-reload": "^1.5.0",
     "npm-run-all": "^4.1.5",
     "react": "^17.0.1",
@@ -46,5 +52,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "build": {
+    "extends": null,
+    "files":["build"],
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
   }
 }
