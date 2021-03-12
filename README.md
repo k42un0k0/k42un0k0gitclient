@@ -3,6 +3,8 @@
 ## やりたいこと
 
 - electron
+- github graph api
+- relay
 
 ## メモ
 
