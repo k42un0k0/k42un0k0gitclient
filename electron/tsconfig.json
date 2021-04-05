@@ -13,5 +13,5 @@
     "resolveJsonModule": true,
     "outDir": "../build"
   },
-  "files": ["../type.d.ts","preload.ts","main.ts"],
+  "files": ["../type.d.ts","listener.ts","preload.ts","main.ts"],
 }
