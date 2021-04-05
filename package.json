@@ -76,7 +76,7 @@
       "target": "dmg"
     },
     "win": {
-      "target": "zip"
+      "target": "nsis"
     },
     "nsis": {
       "oneClick": false,
