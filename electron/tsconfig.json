@@ -11,7 +11,8 @@
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "outDir": "../build"
+    "outDir": "../build",
+    "sourceMap":true
   },
-  "files": ["../type.d.ts","preload.ts","main.ts"],
+  "include": ["../electron"]
 }

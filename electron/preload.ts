@@ -1,8 +1,6 @@
-import electron from 'electron';
+import { contextBridge, ipcRenderer } from 'electron';
 
-process.once('loaded', () => {
-    console.log('---- preload.js loaded ----');
-    global.process = process;
-    global.electron = electron;
-    global.module = module;
+contextBridge.exposeInMainWorld("process", { env: { ...process.env } });
+contextBridge.exposeInMainWorld("main", {
+    debug: () => ipcRenderer.send("debug")
 });

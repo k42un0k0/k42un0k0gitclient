@@ -45,6 +45,11 @@ function App(props: any) {
         <p>{data.repository?.name}</p>
         <p>{data.repository?.owner.login}</p>
       </header>
+      <button onClick={() => {
+        window.main.debug();
+      }}>
+        押せ
+      </button>
     </div>
   );
 }

@@ -16,7 +16,6 @@
   - reactのほうはルートを見るので変えられない
 - preloadを使えばreactのほうからいろいろできる
 
-
 ## spectron
 
 - C:\Users\k42un\Documents\workspace\projects\K42un0k0GitClient\node_modules\spectron\lib\chrome-driver.js
@@ -26,3 +25,22 @@
 - capability
   - webdriverを起動してもcapavilityがどうとか言われる
   - electron-chromedriverが必要なのかも？
+
+## Contribute
+
+### Run Debug Mode
+
+Run `yarn dev` command.
+
+and run `Debug Main Process` in VSCode's Debug Panel.
+
+Then, react-script and electron will start, and you can see inspect in vscode.
+
+## npm scripts
+
+- `dev`
+  - デバッグ用のコマンド、[デバッグモードでの起動](#Run-Debug-Mode)を参照。
+- `start`
+  - とりあえず動かす
+
+後は察してください

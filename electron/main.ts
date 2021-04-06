@@ -1,5 +1,5 @@
 import * as url from "url";
-import { app, BrowserWindow, ipcMain } from "electron"
+import { app, BrowserWindow } from "electron"
 import path from "path"
 
 function main() {
@@ -14,8 +14,6 @@ function main() {
       width: 800,
       height: 600,
       webPreferences: {
-        nodeIntegration: false,
-        contextIsolation: false,
         preload: path.join(__dirname, "preload.js")
       }
     })
@@ -44,3 +42,5 @@ function main() {
 }
 
 main()
+
+require("./listener")
