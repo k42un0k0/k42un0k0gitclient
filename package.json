@@ -9,6 +9,7 @@
   "private": false,
   "scripts": {
     "dev": "run-p dev:*",
+    "dev:debug-main": "run-p dev:web watch:electron",
     "dev:web": "run-p watch:relay start:react",
     "dev:app": "run-p watch:electron start:electron",
     "start:react": "cross-env BROWSER=\"none\" react-scripts start",
